@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:33:52 by bfleitas          #+#    #+#             */
-/*   Updated: 2025/02/24 01:47:22 by bfleitas         ###   ########.fr       */
+/*   Updated: 2025/02/24 12:01:12 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,16 @@ void Character::equip(AMateria *m)
             this->inventory[i] = m;
             break;
         }
+    delete m;
 }
 
 void Character::unequip(int idx)
 {
     if (!(idx < 0 || idx > 3 || !this->inventory[idx]))
+    {
+        delete this->inventory[idx];
         this->inventory[idx] = NULL;
+    }
 }
 
 void Character::use(int idx, ICharacter &target)
