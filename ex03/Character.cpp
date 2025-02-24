@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
+/*   By: bruno <bruno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:33:52 by bfleitas          #+#    #+#             */
-/*   Updated: 2025/02/24 12:01:12 by bfleitas         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:45:34 by bruno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void Character::equip(AMateria *m)
         if(!this->inventory[i])
         {
             this->inventory[i] = m;
-            break;
+            return;
         }
     delete m;
 }
